@@ -1,0 +1,74 @@
+<table id="example2" class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Tipe pembayaran</th>
+    <th>Bank</th>
+    <th>Status</th>
+    <th>Aksi</th>
+  </tr>
+  </thead>
+  <tbody>
+<% for (let i = 0; i < payment.length; i++) { %>
+  <tr>
+    <td><%= i + 1 %></td>
+    <td><%=payment[i].type %></td>
+
+    <td>  
+      <% payment[i].banks.forEach(bank => { %>
+        <span class="badge badge-success" style="background-color: #6f42c1;">
+          <%= bank.name %>, <%= bank.bankName %> - <%= bank.noRekening %> 
+        </span>
+      <% }) %>  
+    </td>  
+
+    <td>
+      <% if (payment[i].status === 'Y') {
+        %> <span class="badge badge-success">
+          Aktif
+          </span>
+      <%}else { %>
+        <span class="badge badge-danger" style="background-color:#8b8f93 ;">
+          Tidak Aktif
+          </span>  
+      <% } %>
+    </td> 
+
+    <td>
+      <form  action="/payment/status/<%= payment[i]._id %>?_method=PUT" method="post" style="display:inline-block ;">
+        <button class="green-button btn-sm"
+
+            <%
+              const buttonStyle = payment[i].status === 'Y' ? 
+              'color: white; background-color: #8b8f93; border: none;' : 
+              'color: white; background-color: #28a745; border: none;';
+            %>
+
+               style="<%= buttonStyle %>">
+
+            <% if (payment[i].status === 'Y') { %>
+              <i class="fas fa-toggle-off"></i>
+                  Matikan
+            <% } else { %>
+              <i class="fas fa-toggle-on"></i>
+                  Hidupkan
+            <% } %>
+
+        </button>
+      </form>
+
+      <a href="/payment/edit/<%= payment[i]._id %>" class="btn btn-info btn-sm">
+        <i class="fas fa-pencil-alt"></i>
+        Ubah
+      </a>
+      <form style="display:inline-block ;" action="/payment/delete/<%= payment[i]._id %>?_method=DELETE" method="post">
+        <button class="btn btn-danger btn-sm">
+          <i class="fas fa-trash"></i>
+          Hapus
+          </button>
+      </form>
+    </td>
+  </tr>
+<% } %>
+</tbody>
+</table>

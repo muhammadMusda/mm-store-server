@@ -1,0 +1,108 @@
+.select2-container .select2-selection--single {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 0px;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.h5, h5 {
+  font-size: 1.10rem;
+  font-weight: 501;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  border: 0px solid #aaa;
+  border-radius: 0.35rem;
+  margin-right: 8px;
+  margin-top: 8px;
+  padding: 2px 6px;
+  font-size: small;
+}
+
+.alert-dismissible .close, .alert-dismissible .mailbox-attachment-close {
+  top: -12px;
+  right: -7px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.30rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;;
+}
+
+.btn-info:hover {
+  color: #fff;
+  background-color: #0068d7;
+  border-color: #0068d7;                  
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #9d2f3a;
+  border-color: #9d2f3a;                  
+}
+
+.btn-danger:active {
+  color: #fff;
+  background-color: #dc3545;;
+  border-color: #dc3545;;
+}
+
+.blue-button {
+  color: white;
+  background-color: #28a745;
+  border: none;
+}
+
+.blue-button:hover {
+  color: white; /* Change font color on hover */
+  background-color: #259740
+}
+
+
+
+
+.alert {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.alert.hide {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
